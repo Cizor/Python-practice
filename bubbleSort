@@ -1,9 +1,8 @@
 #!/usr/bin/python
 
-num_array = [8,4,9,2,0,3,6,7]
+import sys
 
-def bubble_sort():
-	print num_array
+def bubble_sort(num_array):
 	for k in range(len(num_array)-1):
 		for count,i in enumerate(reversed(num_array),1):
 			if len(num_array)- count - 1 >= 0:
@@ -11,5 +10,22 @@ def bubble_sort():
 					num_array[len(num_array)- count], num_array[len(num_array)- count - 1] = num_array[len(num_array)- count - 1], num_array[len(num_array)- count]
 	print num_array
 
-bubble_sort()
+
+if __name__=='__main__':
+	print "Bubble Sorting\n"
+
+	num_array = []
+	num_of_elements = int(input("Enter number of elements you want to sort"))
+	print num_of_elements
+	print "Enter your numbers below\n"
+
+	if num_of_elements > 0:
+		for count in range(num_of_elements):
+			temp = 0
+			temp = raw_input()
+			num_array.append(int(temp))
+		bubble_sort(num_array)
+	else:
+		print "Number of Elements cannot be 0 or less"
+		sys.exit(1)
 		
