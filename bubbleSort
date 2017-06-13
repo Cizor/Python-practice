@@ -1,0 +1,15 @@
+#!/usr/bin/python
+
+num_array = [8,4,9,2,0,3,6,7]
+
+def bubble_sort():
+	print num_array
+	for k in range(len(num_array)-1):
+		for count,i in enumerate(reversed(num_array),1):
+			if len(num_array)- count - 1 >= 0:
+				if i < num_array[len(num_array)- count - 1]:
+					num_array[len(num_array)- count], num_array[len(num_array)- count - 1] = num_array[len(num_array)- count - 1], num_array[len(num_array)- count]
+	print num_array
+
+bubble_sort()
+		

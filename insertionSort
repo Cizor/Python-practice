@@ -1,0 +1,17 @@
+#!/usr/bin/python
+
+num_array = [8,4,2,7,2,0,5,6]
+
+def insertion_sort():
+	pivot = 1
+	print num_array
+	for i in num_array[pivot:len(num_array)]:
+		for j in reversed(num_array[0:pivot]):
+			if j < i:
+				temp = i
+				num_array.remove(i)
+				num_array.insert(num_array[0:pivot].index(j),temp)
+		pivot+=1
+	print num_array
+
+insertion_sort()

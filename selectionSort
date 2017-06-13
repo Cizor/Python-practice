@@ -1,0 +1,13 @@
+#!/usr/bin/python
+
+num_array = [8,4,7,2,0,5,6]
+#yet to resolve issue when there are 2 elements of same value
+def selection_sort():
+	print num_array
+	for i in range(len(num_array)):
+		ind = num_array.index(min(num_array[i:len(num_array)]))
+		num_array[i],num_array[ind] = num_array[ind],num_array[i]
+	print num_array
+		
+
+selection_sort()
