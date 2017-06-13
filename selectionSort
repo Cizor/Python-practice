@@ -1,13 +1,25 @@
 #!/usr/bin/python
 
-num_array = [8,4,7,2,0,5,6]
 #yet to resolve issue when there are 2 elements of same value
-def selection_sort():
-	print num_array
+def selection_sort(num_array):
 	for i in range(len(num_array)):
 		ind = num_array.index(min(num_array[i:len(num_array)]))
 		num_array[i],num_array[ind] = num_array[ind],num_array[i]
 	print num_array
-		
 
-selection_sort()
+if __name__=='__main__':
+	print "Selection Sorting\n"
+
+	num_array = []
+	num_of_elements = int(input("Enter number of elements you want to sort"))
+	print "Enter your numbers below\nDon't give same values, its bugged!"
+
+	if num_of_elements > 0:
+		for count in range(num_of_elements):
+			temp = 0
+			temp = raw_input()
+			num_array.append(int(temp))
+		selection_sort(num_array)
+	else:
+		print "Number of Elements cannot be 0 or less"
+		sys.exit(1)

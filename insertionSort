@@ -1,17 +1,30 @@
 #!/usr/bin/python
 
-num_array = [8,4,2,7,2,0,5,6]
 
-def insertion_sort():
+def insertion_sort(num_array):
 	pivot = 1
-	print num_array
 	for i in num_array[pivot:len(num_array)]:
 		for j in reversed(num_array[0:pivot]):
-			if j < i:
+			if j > i: #Flip this if you want elements in decreasing order
 				temp = i
 				num_array.remove(i)
 				num_array.insert(num_array[0:pivot].index(j),temp)
 		pivot+=1
 	print num_array
 
-insertion_sort()
+if __name__=='__main__':
+	print "Insertion Sorting\n"
+
+	num_array = []
+	num_of_elements = int(input("Enter number of elements you want to sort"))
+	print "Enter your numbers below\n"
+
+	if num_of_elements > 0:
+		for count in range(num_of_elements):
+			temp = 0
+			temp = raw_input()
+			num_array.append(int(temp))
+		insertion_sort(num_array)
+	else:
+		print "Number of Elements cannot be 0 or less"
+		sys.exit(1)

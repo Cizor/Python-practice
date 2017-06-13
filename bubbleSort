@@ -16,7 +16,6 @@ if __name__=='__main__':
 
 	num_array = []
 	num_of_elements = int(input("Enter number of elements you want to sort"))
-	print num_of_elements
 	print "Enter your numbers below\n"
 
 	if num_of_elements > 0:
